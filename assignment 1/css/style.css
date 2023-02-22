@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap'); /*regular */
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@700&display=swap'); /*bold */
+/*links online fonts so they can be used globally*/
+
+h1 {
+    font-family: 'Silkscreen'; font-weight: 700; /*bold text*/
+    font-size: 0.4in; color: #96674b;
+}
+
+h2 {
+    font-family: 'Silkscreen'; font-weight: 700;
+    font-size: 0.3in;
+}
+
+p {
+    font-family: 'Silkscreen';
+    font-size: 16; color: #5a6e83;
+}
+
+/* this keeps everything aligned in center, acts as wrapper */
+body { 
+    width: 70vw; margin: auto;
+}
+
+/* --------------------------------------------------- */
+
+.navbar { /* this is the navigation bar at the top*/
+    height: 1in; width: 100%;
+    top: 0; left: 0; position: fixed;
+    background-color: #000000c9;
+    
+    display: flex; flex-direction: row;
+    justify-content: center;
+}
+    .navbar a {
+        font-family: 'Silkscreen'; font-size: 25;
+        margin-top: 0.5in; margin-right: 0.5in;
+        color: white;
+    }
+    .navbar a:hover {
+        color: rgb(193, 226, 228);
+    }
+
+#heroimage {
+    max-width: 100%; height: auto;
+    display: flex; 
+}
+
+/* --------------------------------------------------- */
+
+.aboutus { /*this is the about us section */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+    "about1 about2 about3";
+
+    column-gap: 0.5in;
+    align-content: space-between;
+    padding: 0.2in 0 0.2in 0;
+}
+    #about1 {
+        color: #2b424d;
+        text-align: justify;
+
+    }
+    #about2 {
+        color: #644646;
+        text-align: justify;
+    }
+    #about3 {
+        color: #3f6264;
+        text-align: justify;
+    }
+
+/* --------------------------------------------------- */
+
+.gallery { /*this is the gallery section*/
+    display: grid;
+    background-color: #cfd8c9;
+    column-gap: 25px; row-gap: 25px;
+    padding: 50px;
+
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 4fr 1fr;
+    grid-template-areas:
+    "pic1 pic2 pic3"
+    "fillertext fillertext fillertext";
+}
+    #pic1, #pic2, #pic3 {
+        display: block;
+        width: 100%; height: auto;
+        align-self: center;
+    }
+    #fillertext {
+        text-align: justify;
+        margin: 0;
+        color: #646d64;
+    }
+    
+/* --------------------------------------------------- */
+
+.animalOTD { /*this is the animal of the day section */
+    display: grid;
+    column-gap: 20px;
+    padding: 0.2in 0 0.2in 0;
+
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "animalimg animaldesc";
+}
+    #animalimg {
+        grid-area: animalimg;
+        height: 200px; width: auto;
+        align-self: center;
+    }
+    #animaldesc {
+        align-self: center;
+        justify-self: center;
+        color: #eda571;
+    }

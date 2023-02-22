@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/style.css" rel="stylesheet">
+    <title>Hiking Society</title>
+</head>
+<body>
+    
+    <nav> 
+        <div class="navbar">
+            <a href="#">about</a>
+            <a href="#">gallery</a>
+            <a href="#">animal of the day</a>
+        </div>
+    </nav>
+
+    <main>
+
+        <header>
+            <!-- when the hero image is clicked, it will ask for a username-->
+            <img id="heroimage" src="images/heroimage.png"
+            onclick="nameprompt()">
+        </header>
+
+        <div class="aboutus">
+
+            <div id="about1">
+                <h2>papa bear</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit nesciunt natus maxime nam 
+                    odit voluptas quas illo magni consectetur quisquam vero enim dicta incidunt hic, iure 
+                    aliquam aperiam itaque nisi?
+                </p>
+            </div>
+
+            <div id="about2">
+                <h2>mama bear</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, similique consequatur 
+                    deserunt, provident illo quia quasi unde accusantium officiis quibusdam natus repudiandae 
+                    ea vitae quisquam tenetur quae neque! Suscipit, atque?
+                </p>
+            </div>
+
+            <div id="about3">
+                <h2>baby bear</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe minus rem quibusdam perferendis 
+                    deleniti, voluptatum quisquam, nesciunt magni cum, voluptate sit? Harum rerum esse repellat, 
+                    at soluta deleniti eveniet expedita.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="gallery">
+
+            <!--grid-area is so the gallery class knows where to place elements
+                js events triggered when mouse hovers over and leaves an element -->
+            <img src="images/hiking1.jpg" id="pic1" style="grid-area: pic1" 
+            onmouseover="imageswap()" onmouseout="imagereverse()"> 
+
+            <img src="images/hiking2.jpg" id="pic2" style="grid-area: pic2"
+            onmouseover="imageswap()" onmouseout="imagereverse()"> 
+
+            <img src="images/hiking3.jpg" id="pic3" style="grid-area: pic3"
+            onmouseover="imageswap()" onmouseout="imagereverse()">
+
+            <h2 id="fillertext" style="grid-area: fillertext;">
+                nature conservation is cool. click on the images to see more!
+            </h2>
+        </div>
+
+        <div class="animalOTD">
+            <img src="images/animalOOTD.jpg" style="grid-area: animalimg" id="animalimg"
+            onclick="alert('you booped the snoot lol')">
+
+            <div id="animaldesc">
+                <h1> the animal of the day is the red fox</h1>
+                <p>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt perspiciatis dolor, 
+                    aut at cupiditate placeat, dolorum itaque a distinctio ratione repudiandae tempora deleniti, 
+                    quos tempore dolore sunt pariatur magni quis!
+                </p>
+        </div>
+    </main>
+
+    <script>
+
+    // these variables are paired with their html counterparts.
+    // this will make it easier to call on elements using the variable name
+    let pic1 = document.getElementById("pic1");
+    let pic2 = document.getElementById("pic2");
+    let pic3 = document.getElementById("pic3");
+    
+    // from here: https://codehs.com/tutorial/rachel/user-input-in-javascript
+    function nameprompt () {
+        //prompts the user for a name with an alert box
+        let name = prompt("what is your name?");
+
+        let age = prompt(`hello ${name}!! welcome to the Dogwood Hiking Society's website. how old are you?`);
+        
+        //uses input stored in name to greet the user
+        alert("thank you for your answer. enjoy your stay!");
+        
+        //this is to check what values are inputted by the user
+        console.log("the datatype of name is " + typeof name);
+        console.log("the datatype of age is " + typeof age);
+    }
+
+
+    //this is a homemade function which changes the image when mouse is hovered over
+    //i used a function instead of onmouseover for each image for efficiency
+    function imageswap() {
+        pic1.src = "images/hiking4.jpg";
+        pic2.src = "images/hiking5.jpg";
+        pic3.src = "images/hiking6.jpg";
+    }
+    //ditto as imageswap, except it changes it back to original image when mouse leaves
+    function imagereverse() {
+        pic1.src = "images/hiking1.jpg";
+        pic2.src = "images/hiking2.jpg";
+        pic3.src = "images/hiking3.jpg";
+    }
+    </script>
+    
+</body>
+</html>
